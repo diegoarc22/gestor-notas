@@ -1,6 +1,28 @@
 import java.util.Scanner;
 
 public class Main {
+    public static String validarEntrada(String mensaje, Scanner sc) {
+        String entrada;
+        do {
+            System.out.print(mensaje); // Usamos print para que escriba al lado
+            entrada = sc.nextLine().trim();
+            if (entrada.isBlank()) {
+                System.out.println("El campo no puede estar vacío.");
+            }
+        } while (entrada.isBlank());
+        return entrada;
+    }
+
+    private static boolean leerBoolean(String mensaje, Scanner sc) {
+        String resp;
+        while (true) {
+            System.out.print(mensaje);
+            resp = sc.nextLine().trim().toLowerCase();
+            if (resp.equals("si")) return true;
+            if (resp.equals("no")) return false;
+            System.out.println("Use 'si' o 'no'.");
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -21,16 +43,11 @@ public class Main {
 
             switch (opcion) {
                 case "1":
-                    System.out.println("Título de la nota: ");
-                    String titulo = scanner.nextLine();
+                    String titulo = validarEntrada("Titulo de la nota: ", scanner);
+                    String contenido = validarEntrada("Contenido de la nota: ", scanner);
+                    boolean importante = leerBoolean("¿Importante? (si/no): ",scanner);
 
-                    System.out.println("Contenido de la nota: ");
-                    String contenido = scanner.nextLine();
-
-                    System.out.println("Es importante?(si/no): ");
-                    String importante = scanner.nextLine();
-
-                    gestor.crearNota(titulo, contenido, importante.equals("si"));
+                    gestor.crearNota(titulo, contenido, importante);
                     break;
                 case "2":
                     // TODO: implementar
