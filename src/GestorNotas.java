@@ -15,8 +15,14 @@ public class GestorNotas {
     }
 
     public void listarNotas() {
-        notas.stream().forEach(System.out::println);
+        notas.stream().
+                forEach(System.out::println);
     }
 
+    public void listarImportantes() {
+        notas.stream().
+                filter(n -> n.isImportante()).
+                forEach(System.out::println);
+    }
 
 }

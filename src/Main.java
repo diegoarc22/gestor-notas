@@ -48,12 +48,15 @@ public class Main {
                     boolean importante = leerBoolean("¿Importante? (si/no): ",scanner);
 
                     gestor.crearNota(titulo, contenido, importante);
+
                     break;
                 case "2":
                     gestor.listarNotas();
+
                     break;
                 case "3":
-                    // TODO: implementar
+                    gestor.listarImportantes();
+
                     break;
                 case "0":
                     salir = true;
