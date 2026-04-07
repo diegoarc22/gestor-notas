@@ -13,4 +13,10 @@ public class GestorNotas {
         int id = contadorId++;
         notas.add(new Nota(id, titulo, contenido, importante));
     }
+
+    public void listarNotas() {
+        notas.stream().forEach(System.out::println);
+    }
+
+
 }
