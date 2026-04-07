@@ -33,7 +33,7 @@ public class Main {
 
         while (!salir) {
 
-            System.out.println("\n=== GESTOR DE NOTAS ===");
+            System.out.println("\n=== GESTOR DE NOTAS-VERSION LISTADO ===");
             System.out.println("1. Crear nota");
             System.out.println("2. Listar notas");
             System.out.println("3. Listar importantes");
